@@ -1,17 +1,25 @@
 package org.example;
 
+import java.util.Scanner;
+import java.util.ArrayList;
 public class Main {
-    public static double sumToN(double b,double n) {
-        if(n == 0) {
-            return 1;
+    static Scanner sc = new Scanner(System.in);
+    public static String inputSum(int n, ArrayList<Integer> list){
+        if(n == 1) {
+            int b = sc.nextInt();
+            return b+ "";
         }
         else {
-            return Math.pow(b, n) + sumToN(b, n-1);
+            int b = sc.nextInt();
+            list.add(b);
+            return inputSum(n-1, list) + " " + b;
         }
     }
 
 
     public static void main(String[] args) {
-        System.out.println(sumToN(3,3));
+        int r = sc.nextInt();
+        ArrayList<Integer> list = new ArrayList<>();
+        System.out.println(inputSum(r, list));
     }
 }
