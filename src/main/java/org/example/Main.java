@@ -1,16 +1,16 @@
 package org.example;
+
 public class Main {
-    public static int squareSum(int n) {
-        if(n == 1) {
-            return 1;
+    public static int sumNElements(int n, int[] arr) {
+        if(n == 0) {
+            return 0;
         }
         else {
-            return n*n + squareSum(n-1);
+            return arr[n-1] + sumNElements(n-1, arr);
         }
     }
-
-
     public static void main(String[] args) {
-        System.out.println(squareSum(5));
+        int[] arr = {1,2,3,4,5,6,7};
+        System.out.println(sumNElements(5, arr));
     }
 }
