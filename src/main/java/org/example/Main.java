@@ -4,13 +4,8 @@ public class Main {
         if (n <= 0) {
             return false;
         }
-        while (n % 2 == 0) {
-            n /= 2;
-        }
-        return n == 1;
+        return (n == 1) || ((n % 2 == 0) && isPowerOfTwo(n / 2));
     }
-
-
     public static void main(String[] args) {
         System.out.println(isPowerOfTwo(16));
     }
